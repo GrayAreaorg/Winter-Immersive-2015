@@ -1,11 +1,15 @@
 # 2015 Winter Immersive Class:
-
+<br>
 =======
 ## Teachers
 > ![](img/nr.png)
 ###[Neal Riley](http://www.nealmakesnoise.com) is an instructor with Gray Area for 5 years, in topics ranging from Music Technology to Web Development.  He has had many positions, including Software Developer at Apple, Apprenctice to Roger Linn, and a dishwasher and a small Taiwanese Restaurant.
 =======
 ## Students
+
+> ![](img/ds.png)
+###[Dan Sullivan](https://github.com/dullivan)
+I'm a professional artist in so far as one time someone bought my drawing from a gallery. It was "$2.29 Out the Door" for a drawing of a tall can, and the gallery was a shipping container filled with trash. I also make apps for librarians all day.
 
 > ![](img/vp.gif)
 ###[Vivien Park](http://gravitymax.wordpress.com)
