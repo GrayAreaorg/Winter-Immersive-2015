@@ -6,6 +6,8 @@
 ###[Neal Riley](http://www.nealmakesnoise.com) is an instructor with Gray Area for 5 years, in topics ranging from Music Technology to Web Development.  He has had many positions, including Software Developer at Apple, Apprenctice to Roger Linn, and a dishwasher and a small Taiwanese Restaurant.
 =======
 ## Students
+> ![](img/sm.jpg)
+###[Shayle Matsuda](http://www.scienceneat.org) in a nutshell: sea slugs, evolution, and equality.  
 
 > ![](img/jy.jpg)
 ###[Jeffrey Yoon](https://www.flickr.com/photos/7258294@N06/)
