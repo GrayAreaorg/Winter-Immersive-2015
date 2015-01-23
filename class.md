@@ -45,7 +45,7 @@ is an instructor with Gray Area for 5 years, in topics ranging from Music Techno
 ###[Vanessa Li](https://github.com/devanessa) 
 A backend software engineer at Rdio with a background in classical piano, music technology and architectural acoustics. Previously, she was at Avid Technology working on the audio engine for ProTools.
 
-> ![](img/zv.jpg)
+> ![](img/zv.jpg  =100x100)
 ###[Zoey Vero](www.zoeyvero.com) 
 Zoey Vero is a Visual and Installation Artist which is awesome.
 <br />
