@@ -38,6 +38,10 @@ is a professionally trained Lighting-Visuals Designer and Technician with 10 yea
 ###[Neal Riley](http://www.nealmakesnoise.com)
 is an instructor with Gray Area for 5 years, in topics ranging from Music Technology to Web Development.  He has had many positions, including Software Developer at Apple, Apprenctice to Roger Linn, and a dishwasher and a small Taiwanese Restaurant.
 
+> ![](img/nlh.jpg)
+###[Noura Howell](http://www.nourahowell.com)
+is an instructor with Gray Area for the first time, teaching JavaScript. As a PhD student at UC Berkeley, she is interested in developing new ways for people to be creative using technology.
+
 =======
 ## TAs
 
