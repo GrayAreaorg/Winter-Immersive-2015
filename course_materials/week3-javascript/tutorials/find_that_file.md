@@ -18,39 +18,39 @@ So for example to include a JavaScript file on an HTML page...
 
 The above will work only if the `index.js` file is in the same folder as `index.html`, for example if our files were organized like so...
 
-<code>
+<pre><code>
 htdocs
     my_example
         index.html
         index.js
-</code>
+</code></pre>
 
 If instead what you have is 
 
-<code>
+<pre><code>
 htdocs
     my_example
         index.html
         js <--- folder to store all our JavaScript files
             index.js
-</code>
+</code></pre>
 
 then you need to do `src="js/index.js"`. This tells the computer to, starting from the location of `index.html`, go into the `js` folder and look for the `index.js` file there.
 
 As another example, if your files are organized like this
 
-<code>
+<pre><code>
 htdocs
     index.js
     my_example
         index.html
-</code>
+</code></pre>
 
 then you need to do `src="../index.js"`. This tells the computer to to, starting from the location of `index.html`, go up a level and look for `index.js` there.
 
 You can combine the `/` and `..` pieces for whatever folder organization scheme you have going. For example if you had
 
-<code>
+<pre><code>
 htdocs
     static
         js
@@ -58,7 +58,7 @@ htdocs
     my_work
         my_example
             index.html
-</code>
+</code></pre>
 
 then you would do `src="../../static/js/index.js"`
 To break that down:
