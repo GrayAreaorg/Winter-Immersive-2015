@@ -94,6 +94,11 @@ This class will give an overview to the technologies taught as well as an introd
 
 ### Assignment #1:
 
+Recall and an impactful experience from your past. Explore a new way to bring that experience to life through interactive art. 
+
+Think about what a person has to see, hear, touch, etc. to interact with the piece. Think about what cues they need to understand the experience. Think about what parts of their body they need to have free, what gestures are best for triggering the pieces behaviors, and so forth.  
+
+Draw and document this new piece.
 
 
 
