@@ -100,5 +100,10 @@ Think about what a person has to see, hear, touch, etc. to interact with the pie
 
 Draw and document this new piece.
 
-
+<br>
+## Thursday February 5th 2015 (6pm - 9pm)
+<br>
+### Part I: Share Results from Aassignment #1
+<br>
+### Part II: Grant Writing
 
