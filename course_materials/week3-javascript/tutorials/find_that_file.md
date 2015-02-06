@@ -61,8 +61,13 @@ htdocs
 </code></pre>
 
 then you would do `src="../../static/js/index.js"`
+
 To break that down:
-1. the first `..` tells the computer to go up a level, so now it is in the `my_work` folder
+
+1. starting from the location of `index.html`, the first `..` tells the computer to go up a level, so now it is in the `my_work` folder
+
 2. the second `..` tells the computer to go up another level, so now it is in the `htdocs` folder
+
 3. the first `/` tells the computer to go down into the `static` folder
+
 4. the second `/` tells the computer to go down into the `js` folder
