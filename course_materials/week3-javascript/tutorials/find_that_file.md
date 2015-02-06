@@ -31,7 +31,7 @@ If instead what you have is
 htdocs
     my_example
         index.html
-        js <--- folder to store all our JavaScript files
+        js &lt;--- folder to store all our JavaScript files
             index.js
 </code></pre>
 
