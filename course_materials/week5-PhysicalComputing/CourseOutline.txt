@@ -79,7 +79,7 @@ Excercise 3
 -Automating Communication with the Firmata firmware
 -Program 1 PrduinoPwmFirmata
 
-Demonstration of commincation betwen arduino and a webpage with NodeJS in prep for week 6
+Demonstration of communication betwen arduino and a webpage with NodeJS in prep for week 6
 
 
 
