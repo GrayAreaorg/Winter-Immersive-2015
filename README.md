@@ -21,10 +21,10 @@ instruction distributed over three sessions, **Tuesdays & Thursdays (6pm – 9pm
 | 3 | 1/27,29,31 | Javascript | Noura Howell |
 | 4 | 2/3,5,7 | Installation Art I | Matt Ganucheau |
 | 5 | 2/10,12,14 | Physical Computing | Mark Hellar |
-| 6 | 2/17,19,21 | Node.js | --- |
+| 6 | 2/17,19,21 | Node.js | Hugh Kennedy |
 | 7 | 2/24,26,28 | Data Visualization | Shirley Wu |
-| 8 | 3/3,5,7 | Installation Art II | Matt Ganucheau |
-| 9 | 3/10,12,14 | Interactive Audio | Cullen Miller |
+| 8 | 3/3,5,7 | Interactive Audio | Cullen Miller |
+| 9 | 3/10,12,14 |Installation Art II | Matt Ganucheau |
 | 10 | 3/17,19,21 | Projection Mapping | Gabriel Dunne |
 |  |  | Development Week |  |
 |  | 4/1| Showcase Event |  |
