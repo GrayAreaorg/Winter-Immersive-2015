@@ -1,6 +1,9 @@
 # 2015 Winter Immersive Class:
 =======
 ## Students
+>![](img/kk.jpg) 
+### [Azael Ferrer Gordo](http://www.azaelferrer.com/)
+is a professionally trained Lighting-Visuals Designer and Technician with 10 years experience. Theatre Background, 7 years as technical lighting and video to Canovas Theater (Malaga). Currently work as freelance and develops visual art installations, experiments with sound, light and generative graphics, and leads those experiments into the field of digital arts. 
 
 > ![](img/chuck.jpg)
 ###[Charles Kwong](https://github.com/chuckySF)
@@ -25,11 +28,6 @@ design & develop art & tech. social internet baby genie, part time pixel princes
 > ![](img/vp.gif)
 ###[Vivien Park](http://gravitymax.wordpress.com)
 I learn everything from Youtube. I also love cats.
-
-## Azael Ferrer Gordo
->![](img/kk.jpg) 
-### [Azael Ferrer.com](http://www.azaelferrer.com/)
-is a professionally trained Lighting-Visuals Designer and Technician with 10 years experience. Theatre Background, 7 years as technical lighting and video to Canovas Theater (Malaga). Currently work as freelance and develops visual art installations, experiments with sound, light and generative graphics, and leads those experiments into the field of digital arts. 
 
 =======
 ## Teachers
