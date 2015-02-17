@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Node.js: Day 1</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <style media="screen">
+      .reveal blockquote {
+        padding: 2rem;
+        font-size: 1.5rem;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Week 6: Node.js</h1>
+          <img style="border: 0; background: transparent; box-shadow: none" src="./img/ccio.png" />
+        </section>
+        <section>
+          <section>
+            <h2>Hugh Kennedy</h2>
+          </section>
+          <section>
+            <a target="_blank" href="http://nodesource.com">
+              <img style="border: 0; background: transparent; box-shadow: none" src="./img/ns.png" />
+            </a>
+          </section>
+          <section>
+            <h2><a target="_blank" href="http://stack.gl">stack.gl</a></h2>
+          </section>
+        </section>
+        <section>
+          <h2>Day 1: Node 101</h2>
+        </section>
+        <section>
+          <h2>Installing Node</h2>
+          <table>
+            <tr>
+              <td style="border: 0">Mac/Win</td>
+              <td style="border: 0">
+                <a target="_blank" href="http://nodejs.org/download">http://nodejs.org/download</a>
+              </td>
+            </tr>
+            <tr>
+              <td>"Other"</td>
+              <td>
+                <a target="_blank" href="http://git.io/wUzU4g">http://git.io/wUzU4g</a>
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section>
+          <section>
+            <h2>What is Node?</h2>
+            <blockquote cite="http://nodejs.org">
+              Node.js&reg; is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices.
+            </blockquote>
+          </section>
+          <section>
+            <h2>Wait, What?</h2>
+          </section>
+          <section>
+            <img src="img/chrome.png" style="border:0; background: transparent; box-shadow: none; width: 400px; height: 400px" alt="" />
+            <aside class="notes">
+              You're no doubt all familiar with Chrome. Chrome runs JavaScript well, and it runs it fast.
+            </aside>
+          </section>
+          <section>
+            <img src="img/v8.svg" style="border:0; background: transparent; box-shadow: none; width: 400px; height: 400px" alt="" />
+            <aside class="notes">
+              This is because of V8. V8 is Chrome's *JavaScript Engine*, which is
+              responsible for loading, parsing and running JavaScript on every website
+              you visit in Chrome.
+            </aside>
+          </section>
+          <section>
+            <img src="img/oss.png" style="border:0; background: transparent; box-shadow: none; width: auto; height: 400px" />
+            <aside class="notes">
+              The best thing about V8 is that it's Open Source, and you don't
+              actually need to use Chrome to use V8.
+            </aside>
+          </section>
+          <section>
+            <img src="img/simcity.png"/>
+            <aside class="notes">
+              Even SimCity uses V8, and Chrome's old rendering engine WebKit, for its UI.
+            </aside>
+          </section>
+          <section>
+            <h3>
+              Node is essentially V8, with some additions so that you can use it to write servers.
+            </h3>
+          </section>
+          <section>
+            <h2>Input/Output</h2>
+            <a target="_blank" href="http://github.com/maxogden/art-of-node">
+              <img src="img/nodemap.png" style="background: #fff; padding: 1rem; border-radius: 1rem" alt="" />
+            </a>
+            <aside class="notes">
+              Node's really good at being the "glue" communicating
+              between larger systems. With Node, you can shuffle data around from
+              Amazon to Twitter to an Arduino to the browser quickly and simply.
+            </aside>
+          </section>
+          <section>
+            <img src="img/repl.png" style="border:0; background: transparent; box-shadow: none" />
+            <aside class="notes">
+              You can run Node from the terminal too, so unlike Chrome it's easy to pick up
+              and put it in a datacenter, or a slow laptop, or a Raspberry Pi.
+            </aside>
+          </section>
+          <section>
+            <h2><a target="_blank" href="http://dashboard.sidlee.com/">Sid Lee Dashboard</a></h2>
+            <aside class="notes">
+              For example, this dashboard which has been making the rounds lately uses
+              socket.io to stream data from a Node server to the browser over WebSockets,
+              providing near-realtime updates.
+
+              I'm unsure about the details, but data here is being collected from multiple
+              Arduinos and sent to Node, which in turn sends the data your way when it updates.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Who Uses Node?</h2>
+            <ul>
+              <li class="fragment" data-fragment-index="1">PayPal</li>
+              <li class="fragment" data-fragment-index="2">NASA</li>
+              <li class="fragment" data-fragment-index="3">Mapbox</li>
+              <li class="fragment" data-fragment-index="4">Yahoo</li>
+              <li class="fragment" data-fragment-index="5">Uber</li>
+              <li class="fragment" data-fragment-index="6">Walmart</li>
+              <li class="fragment" data-fragment-index="7">Facebook</li>
+            </ul>
+            <aside class="notes">
+              Having been around for almost six years, Node has started to move from being
+              an experimental tool and is now in use by companies large and small, including
+              PayPal, NASA, Mapbox, Yahoo, Uber, Walmart and Facebook.
+            </aside>
+          </section>
+          <section>
+            <h2><a href="http://donottouch.org/">Do Not Touch</a></h2>
+            <aside class="notes">
+              In media and the arts, Node is often used as a broker between multiple
+              services or devices. In Do Not Touch, it's responsible for collecting
+              and storing the positions of visitors' mouse cursors, and then periodically
+              triggering a rerender of the video displayed in the background.
+            </aside>
+          </section>
+          <section>
+            <iframe src="//player.vimeo.com/video/31952864"
+              width="600"
+              height="381"
+              frameborder="0"
+              webkitallowfullscreen mozallowfullscreen allowfullscreen
+            ></iframe>
+            <aside class="notes">
+              In the case of EELS 3D, Node is used to send data in realtime between
+              a user's phone and the projection-mapped physical installation.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Why Node?</h2>
+          </section>
+          <section>
+            <h2>Node is good at Asynchronous Programming</h2>
+          </section>
+          <section>
+            <h2>Blocking I/O</h2>
+            <pre class="javascript"><code>var data = fs.readFileSync('index.js', 'utf8')</code></pre>
+          </section>
+          <section>
+            <table style="font-size: 0.9em">
+              <thead>
+                <tr><th>Class</th><th>Operation</th><th>Time cost</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="3">Memory</td>
+                  <td>L1 cache reference:</td>
+                  <td style="text-align: right;">1 ns</td>
+                </tr>
+                <tr>
+                  <td>L2 cache reference:</td>
+                  <td style="text-align: right;">4 ns</td>
+                </tr>
+                <tr>
+                  <td>Main memory reference:</td>
+                  <td style="text-align: right;">100 ns</td>
+                </tr>
+                <tr>
+                </tr><tr>
+                  <td rowspan="4" style="border-bottom:0">I/O</td>
+                  <td>SSD random-read:</td>
+                  <td style="text-align: right;">16,000 ns</td>
+                </tr>
+                <tr>
+                  <td>Round-trip in same datacenter:</td>
+                  <td style="text-align: right;">500,000 ns</td>
+                </tr>
+                <tr>
+                  <td>Physical disk seek:</td>
+                  <td style="text-align: right;">4,000,000 ns</td>
+                </tr>
+                <tr>
+                  <td>Round-trip from US to EU:</td>
+                  <td style="text-align: right;">150,000,000 ns</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h2>Non-Blocking I/O</h2>
+          </section>
+          <section>
+<pre class="javascript"><code>fs.readFile('index.js', 'utf8', function(err, data) {
+  if (err) throw err
+  console.log(data)
+})</code></pre>
+          </section>
+          <section>
+            <img src="img/loop.jpg" style="padding: 2rem; background: #50534A; border-radius: 1rem" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Running Node</h2>
+<pre class="javascript"><code>// index.js
+console.log('hello world')</code></pre>
+          </section>
+          <section>
+            <img src="img/script.png" style="border:0; background: transparent; box-shadow: none" />
+          </section>
+          <section>
+            <img src="img/repl.png" style="border:0; background: transparent; box-shadow: none" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>process.argv</h2>
+<pre class="javascript"><code>// index.js
+console.log(process.argv)</code></pre>
+          </section>
+          <section>
+            <img src="img/argv.png" style="border:0; background: transparent; box-shadow: none" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <img src="img/npm.svg" style="border:0; background: transparent; box-shadow: none"/>
+          </section>
+          <section>
+            <h2>npm makes node great</h2>
+          </section>
+          <section>
+            <h2>Anyone Can Install</h2>
+          </section>
+          <section>
+            <h2>Anyone Can Publish</h2>
+          </section>
+          <section>
+            <h2>&gt;125,000 packages</h2>
+          </section>
+          <section>
+            <h2>&gt;200 packages/day</h2>
+          </section>
+          <section>
+            <ul>
+              <li class="fragment" data-fragment-index="1">Server Frameworks</li>
+              <li class="fragment" data-fragment-index="2">Browser Libraries</li>
+              <li class="fragment" data-fragment-index="3">Build Tools</li>
+              <li class="fragment" data-fragment-index="4">Web APIs</li>
+              <li class="fragment" data-fragment-index="5">Protocols</li>
+              <li class="fragment" data-fragment-index="6">Computational Geometry</li>
+              <li class="fragment" data-fragment-index="7">Image/Audio Processing</li>
+              <li class="fragment" data-fragment-index="8">3D Graphics</li>
+              <li class="fragment" data-fragment-index="9">Scientific Computing</li>
+              <li class="fragment" data-fragment-index="10">Databases</li>
+              <li class="fragment" data-fragment-index="11">Statistical Analysis</li>
+            </ul>
+          </section>
+          <section>
+<pre class="bash"><code>$ npm install stats-lite</code></pre>
+          </section>
+          <section>
+<pre class="bash"><code>$ ls -1 node_modules
+stats-lite/</code></pre>
+          </section>
+          <section>
+<pre class="javascript"><code>// index.js
+var stats = require('stats-lite')
+
+console.log(stats.stdev([1, 5, 6, 1, 2, 0]))</code></pre>
+          </section>
+          <section>
+<pre class="bash"><code>$ node index.js
+2.217355782608345
+</code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>npm install giphy</h2>
+            <h4>Play around with Giphy's API in Node</h4>
+          </section>
+          <section>
+<pre class="javascript"><code>var token = 'dc6zaTOxFJmzC'
+var giphy = require('giphy')(token)
+
+giphy.translate({}, function(err, data) {
+  if (err) throw err
+})</code></pre>
+          </section>
+        </section>
+        <section>
+          <h1>Assignment #1</h1>
+          <h2>Giphy Translate Tool</h2>
+          <p>
+            Use Giphy's "translate" API to create a script that outputs GIF based on
+            user input. If you have extra time to spare, try jumping ahead and making a
+            web server that serves these images to a browser based on the specified URL.
+          </p>
+        </section>
+        <section>
+          <h1>Asynchronous Patterns</h1>
+        </section>
+        <section>
+          <section>
+            <h2>Callbacks</h2>
+<pre class="fragment javascript" data-fragment-index="2"><code>var doThing = function(callback) {
+  setTimeout(function() {
+    callback(null, { ok: true })
+  }, 100)
+}</code></pre>
+<pre class="fragment javascript" data-fragment-index="1"><code>doThing(function(err, result) {
+  if (err) throw err
+
+  console.log(result.ok)
+})</code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>EventEmitters</h2>
+<pre class="fragment javascript" data-fragment-index="2"><code>var code = new EventEmitter
+
+setInterval(function() {
+  code.emit('data', Math.random())
+}, 1000)</code></pre>
+<pre class="fragment javascript" data-fragment-index="1"><code>code.on('data', function(result) {
+  console.log(result)
+})</code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Streams</h2>
+            <blockquote>
+We should have some ways of connecting programs like garden hose – screw in
+another segment when it becomes necessary to massage data in
+another way. This is the way of IO also.
+            </blockquote>
+            <p style="font-size: 1.25rem">
+              Doug McIlroy. October 11, 1964
+            </p>
+          </section>
+          <section>
+<pre class="fragment bash" data-fragment-index="1"><code># Get unique values from column 1 of a .csv file
+# Write output to index.txt
+$ cat index.csv | cut -d, -f1 | uniq > index.txt</code></pre>
+<pre class="fragment javascript" data-fragment-index="2"><code>fs.createReadStream('index.csv')
+  .pipe(split('\n')) // Split on newlines
+  .pipe(csv2(','))   // Split each line into values (-d,)
+  .pipe(pick(0))     // Pick the first value (-f1)
+  .pipe(unique())    // Only output unique values (uniq)
+  .pipe(join('\n'))  // Add the newlines back into your output
+  .pipe(fs.createWriteStream('index.txt'))
+</pre></code>
+          </section>
+          <section>
+            <h2>Streams are hard to write</h2>
+          </section>
+          <section>
+            <h2>But easy to use</h2>
+          </section>
+        </section>
+        <section>
+          <h2>Servers and Clients</h2>
+          <section>
+            <img src="img/conns-server.svg" style="background: transparent; border: 0; box-shadow: none; width: 400px; height: 400px" />
+          </section>
+          <section>
+            <img src="img/conns-client.svg" style="background: transparent; border: 0; box-shadow: none; width: 400px; height: 400px" />
+          </section>
+          <section>
+            <img src="img/conns-connected.svg" style="background: transparent; border: 0; box-shadow: none; width: 400px; height: 400px" />
+          </section>
+          <section>
+            <img src="img/conns.svg" style="background: transparent; border: 0; box-shadow: none; width: 400px; height: 400px" />
+          </section>
+        </section>
+        <section>
+          <section>
+            <h1>TCP</h1>
+            <h3>A "baseline" for raw data</h3>
+          </section>
+          <section>
+<pre class="javascript"><code>var net = require('net')
+
+var server = net.createServer(function(connection) {
+  connection.write('hello\n')
+  connection.write('world\n')
+  connection.end()
+})
+
+server.listen(9999, function(err) {
+  if (err) throw err
+  console.log('telnet localhost 9999')
+})</code></pre>
+          </section>
+          <section>
+            <img src="img/telnet.png" style="background: transparent; box-shadow: none; border: 0"/>
+          </section>
+          <section>
+<pre class="javascript"><code>var net = require('net')
+
+var client = net.connect({
+  host: 'localhost',
+  port: 9999
+})
+
+client.pipe(process.stdout)</code></pre>
+          </section>
+          <section>
+<pre class="javascript"><code>var net = require('net')
+
+var client = net.connect({
+  host: 'localhost',
+  port: 9999
+})
+
+process.stdin
+  .pipe(client)
+  .pipe(process.stdout)</code></pre>
+
+<pre class="javascript"><code>var net = require('net')
+
+var server = net.createServer(function(connection) {
+  console.log('connection established')
+  connection.write('hello\n')
+  connection.write('world\n')
+
+  connection.pipe(process.stdout)
+})
+
+server.listen(9999, function(err) {
+  if (err) throw err
+  console.log('telnet localhost 9999')
+})</code></pre>
+          </section>
+          <section>
+            <img src="img/tcp-client.png" style="background: transparent; box-shadow: none; border: 0"/>
+          </section>
+          <section>
+            <img src="img/tcp-server.png" style="background: transparent; box-shadow: none; border: 0"/>
+          </section>
+        </section>
+        <section>
+          <h1>Assignment #2</h1>
+          <h2>Create a TCP chat server/client</h2>
+          <ul style="font-size: 1.5rem">
+            <li style="margin-bottom: 1rem">You should be able to start the server using <em>node server.js</em>, and have it listen for incoming connections in the background.</li>
+            <li style="margin-bottom: 1rem">The client may send messages using <em>node client.js &lt;server-address&gt; &lt;message&gt;</em>.</li>
+            <li style="margin-bottom: 1rem">Try adding some functionality to the server or client: colorized text, emoji support, ASCII art, are some fun examples.</li>
+            <li style="margin-bottom: 1rem">Try making the chat client persistent: that is to say, you can start it up once and continue typing messages without having to restart the process.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
