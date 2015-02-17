@@ -2,6 +2,8 @@
 
 ## Day 1: Node 101
 
+[**Download PDF Slides ↓**](https://github.com/GrayAreaorg/Winter-Immersive-2015/raw/master/course_materials/week6-node/slides/day-1.pdf)
+
 ### Getting Started with Node
 
 * Introduction
