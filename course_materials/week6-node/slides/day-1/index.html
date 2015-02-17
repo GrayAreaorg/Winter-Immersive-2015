@@ -347,12 +347,12 @@ giphy.translate({}, function(err, data) {
         <section>
           <section>
             <h2>Callbacks</h2>
-<pre class="fragment javascript" data-fragment-index="2"><code>var doThing = function(callback) {
+<pre class="fragment javascript" data-fragment-index="2"><code>var delayed = function(callback) {
   setTimeout(function() {
     callback(null, { ok: true })
   }, 100)
 }</code></pre>
-<pre class="fragment javascript" data-fragment-index="1"><code>doThing(function(err, result) {
+<pre class="fragment javascript" data-fragment-index="1"><code>delayed(function(err, result) {
   if (err) throw err
 
   console.log(result.ok)
