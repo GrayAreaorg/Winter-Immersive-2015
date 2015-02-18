@@ -184,10 +184,30 @@
           </section>
           <section>
             <h2>Node is good at Asynchronous Programming</h2>
+            <aside class="notes">
+              The reason everybody started using Node was because it was good at
+              asynchronous programming: almost every core function in Node runs
+              in the background, so your server isn't waiting around every time
+              you read a file.
+
+              This is possible with other platforms too, but Node makes this the
+              default and has built its ecosystem around it.
+            </aside>
           </section>
           <section>
             <h2>Blocking I/O</h2>
-            <pre class="javascript"><code>var data = fs.readFileSync('index.js', 'utf8')</code></pre>
+<pre class="javascript"><code>var data = fs.readFileSync('index.js', 'utf8')
+
+console.log(data)</code></pre>
+            <aside class="notes">
+              To explain, traditional servers use "blocking I/O": whenever you perform
+              an operation that requires accessing data outside of the current process,
+              the server "blocks" everything until that operation's ready. Once that happens,
+              the code continues running.
+
+              This is easy to reason about, because everything happens in order. However
+              it comes at a cost.
+            </aside>
           </section>
           <section>
             <table style="font-size: 0.9em">
@@ -228,6 +248,21 @@
                 </tr>
               </tbody>
             </table>
+            <aside class="notes">
+              Compared to crunching numbers, I/O is really expensive. This is
+              a table comparing the latency of different I/O operations, ranging from
+              reading data from the L1 cache on your CPU to making a web request from
+              your laptop in the US to a server in the EU.
+
+              Requesting data between continents is at least 1 and a half million times
+              slower than accessing it within the process, and even reading from the
+              disk takes 40,000 times as long.
+
+              Ryan Dahl, the creator of Node, noticed that most servers spend all of their
+              time waiting for I/O to complete, resulting in a huge waste of resources.
+              If we could keep running our code while we're waiting on that other data to come
+              through, we could speed our servers up considerably.
+            </aside>
           </section>
           <section>
             <h2>Non-Blocking I/O</h2>
@@ -236,23 +271,70 @@
 <pre class="javascript"><code>fs.readFile('index.js', 'utf8', function(err, data) {
   if (err) throw err
   console.log(data)
-})</code></pre>
+})
+
+console.log('this happens straight away!')</code></pre>
+            <aside class="notes">
+              Node's solution is to run all of these I/O operations in the background,
+              and keep running JavaScript in the meantime.
+
+              When the operation is complete, Node calls a "callback" function for you
+              with the resulting data.
+            </aside>
           </section>
           <section>
             <img src="img/loop.jpg" style="padding: 2rem; background: #50534A; border-radius: 1rem" />
+            <aside class="notes">
+              This is done using Node's Event Loop and its Event Queue. Node works
+              in "ticks", with each tick being a full rotation around the event loop.
+
+              At the beginning of a tick, your JavaScript is executed. Whenever your
+              script makes a request that requires asynchronous I/O, that request is
+              added to the Event Queue.
+
+              Once your JavaScript has finished executing, Node runs through the Event
+              Queue, checking to see what's ready and what's still pending. If something's
+              ready, it'll run the required JavaScript at the beginning of the next tick.
+
+              This happens indefinitely until your process crashes, or until your server
+              has nothing else to do.
+
+              The end result is that you can make expensive I/O calls in the background
+              without having to worry anywhere near as much about their performance impact.
+            </aside>
           </section>
         </section>
         <section>
+          <h2>Running Node</h2>
           <section>
-            <h2>Running Node</h2>
+            <img src="img/repl.png" style="border:0; background: transparent; box-shadow: none" />
+            <aside class="notes">
+              Running a Node script is pretty simple.
+
+              At its simplest, you can just run `node` from your terminal without
+              any arguments.
+
+              That'll pop up a REPL, which lets you type out JavaScript and see
+              the results.
+            </aside>
+          </section>
+          <section>
 <pre class="javascript"><code>// index.js
 console.log('hello world')</code></pre>
+            <aside class="notes">
+              Of course, in practice we don't want to run everything directly from
+              the REPL.
+
+              Here's a simple script. All it does is log out "hello world" to the terminal.
+            </aside>
           </section>
           <section>
             <img src="img/script.png" style="border:0; background: transparent; box-shadow: none" />
-          </section>
-          <section>
-            <img src="img/repl.png" style="border:0; background: transparent; box-shadow: none" />
+            <aside class="notes">
+              When you run Node, pass in the filename of your script as the first argument.
+
+              Instead of starting a REPL, you'll run the script.
+            </aside>
           </section>
         </section>
         <section>
@@ -260,29 +342,66 @@ console.log('hello world')</code></pre>
             <h2>process.argv</h2>
 <pre class="javascript"><code>// index.js
 console.log(process.argv)</code></pre>
+            <aside class="notes">
+              The simplest way of passing data into a node process is using the
+              `process.argv` variable, which is an array of your command-line arguments.
+            </aside>
           </section>
           <section>
             <img src="img/argv.png" style="border:0; background: transparent; box-shadow: none" />
+            <aside class="notes">
+              The first two values will always be "node" and the location of the script file.
+
+              After that you can pass in extra values to use from your script.
+            </aside>
           </section>
         </section>
         <section>
           <section>
             <img src="img/npm.svg" style="border:0; background: transparent; box-shadow: none"/>
+            <aside class="notes">
+              If you want to get anything interesting done with Node, eventually
+              you're going to need to familiarise yourself with npm, Node's package
+              manager.
+
+              If you want to download a library for use in your application, npm
+              is what you'd use to get it. There's a centralised registry for people
+              to install code from and publish code to.
+            </aside>
           </section>
           <section>
             <h2>npm makes node great</h2>
+            <aside class="notes">
+              For me, npm is the most interesting part of Node, and where all the interesting
+              and useful stuff in the community is coming from.
+            </aside>
           </section>
           <section>
             <h2>Anyone Can Install</h2>
+            <aside class="notes">
+              The npm team take a very relaxed approach to managing the registry. Of course,
+              anyone can install a package from npm.
+            </aside>
           </section>
           <section>
             <h2>Anyone Can Publish</h2>
+            <aside class="notes">
+              But anyone can publish to the registry too. There's no rules on what can be published,
+              I even have 80MB open source 3D models stored on there. You can get an account in a few
+              minutes, and publish something in a few minutes more.
+            </aside>
           </section>
           <section>
             <h2>&gt;125,000 packages</h2>
+            <aside class="notes">
+              As a result, npm is now the world's largest module registry with over 125,000 packages.
+            </aside>
           </section>
           <section>
             <h2>&gt;200 packages/day</h2>
+            <aside class="notes">
+              It's growing exponentially too: currently it stands at 200 new packages per day.
+            </aside>
           </section>
           <section>
             <ul>
@@ -298,24 +417,54 @@ console.log(process.argv)</code></pre>
               <li class="fragment" data-fragment-index="10">Databases</li>
               <li class="fragment" data-fragment-index="11">Statistical Analysis</li>
             </ul>
+            <aside class="notes">
+              There's packages for a wide variety of topics. These range from
+              simple pedestrian web development tools: server frameworks, browser libraries,
+              build tools and web APIs and protocols. But there's also communities churning
+              out packages for computational geometry, image and audio processing, 3D
+              graphics, scientific computing, embedded databases and statistical analysis.
+              All of this stuff is useful in more adventurous projects
+            </aside>
           </section>
           <section>
 <pre class="bash"><code>$ npm install stats-lite</code></pre>
+            <aside class="notes">
+              A simple example would be installing and using a package
+              for calculating the standard deviation of an array of values,
+              using the `stats-lite` module.
+
+              If you go into your project directory and run `npm install stats-lite`,
+              `stats-lite` gets downloaded and installed for you.
+            </aside>
           </section>
           <section>
 <pre class="bash"><code>$ ls -1 node_modules
 stats-lite/</code></pre>
+            <aside class="notes">
+              If you check your project directory, you'll notice that
+              a `node_modules` directory has been created. This is where
+              all of your npm packages go.
+            </aside>
           </section>
           <section>
 <pre class="javascript"><code>// index.js
 var stats = require('stats-lite')
+var stdev = stats.stdev([1, 5, 6, 1, 2, 0])
 
-console.log(stats.stdev([1, 5, 6, 1, 2, 0]))</code></pre>
+console.log(stdev)</code></pre>
+            <aside class="notes">
+              You can then pull that project into your script using the `require`
+              function. Here, we're determining the standard deviation a
+              small array and logging it to the console
+            </aside>
           </section>
           <section>
 <pre class="bash"><code>$ node index.js
 2.217355782608345
 </code></pre>
+            <aside class="notes">
+              Now if you run your script, you'll get the value logged out!
+            </aside>
           </section>
         </section>
         <section>
@@ -350,26 +499,57 @@ giphy.translate({}, function(err, data) {
 <pre class="fragment javascript" data-fragment-index="2"><code>var delayed = function(callback) {
   setTimeout(function() {
     callback(null, { ok: true })
-  }, 100)
+  }, 1000)
 }</code></pre>
 <pre class="fragment javascript" data-fragment-index="1"><code>delayed(function(err, result) {
   if (err) throw err
 
   console.log(result.ok)
 })</code></pre>
+            <aside class="notes">
+              Callbacks are the simplest Node pattern, though they take a while to get used to.
+
+              One of the nice things with JavaScript is that functions are just objects or variables
+              that you can pass around like anything else – much more flexible than using Processing
+              with Java.
+
+              The above example uses a "delayed" function which calls the callback function after
+              waiting for a second.
+
+              Note that the first argument of a Node callback is always an error, which is nice and
+              consistent. If the operation was completed successfully then the error argument will
+              be false.
+
+              Under the hood, the "delayed" function is just a wrapper around `setTimeout`. After
+              the timeout clears, you can see it calls the `callback` function without an error and
+              with the `result` object.
+            </aside>
           </section>
         </section>
         <section>
           <section>
             <h2>EventEmitters</h2>
-<pre class="fragment javascript" data-fragment-index="2"><code>var code = new EventEmitter
+<pre class="fragment javascript" data-fragment-index="2"><code>var emitter = new EventEmitter
 
 setInterval(function() {
-  code.emit('data', Math.random())
+  emitter.emit('data', Math.random())
 }, 1000)</code></pre>
-<pre class="fragment javascript" data-fragment-index="1"><code>code.on('data', function(result) {
-  console.log(result)
+<pre class="fragment javascript" data-fragment-index="1"><code>emitter.on('data', function(result) {
+  console.log(result) // Random numbers
 })</code></pre>
+            <aside class="notes">
+              EventEmitters are a little more complex, but should be familiar to you if you've
+              used jQuery to handle mouse input.
+
+              You can listen for events using the emitter's `.on` function and passing in an event
+              name and function.
+
+              Whenever the event is emitted using the `.emit` function, that function will be called
+              with whatever additional arguments were passed in.
+
+              Generally EventEmitters are useful in place of callbacks whenever you want to call
+              something more than once, or respond to multiple types of events.
+            </aside>
           </section>
         </section>
         <section>
@@ -383,6 +563,11 @@ another way. This is the way of IO also.
             <p style="font-size: 1.25rem">
               Doug McIlroy. October 11, 1964
             </p>
+            <aside class="notes">
+              Streams are an old paradigm that date back to the 1960s, in the early days
+              of UNIX. The idea was to take I/O operations and make them easily
+              interchangeable and connectable.
+            </aside>
           </section>
           <section>
 <pre class="fragment bash" data-fragment-index="1"><code># Get unique values from column 1 of a .csv file
@@ -396,12 +581,37 @@ $ cat index.csv | cut -d, -f1 | uniq > index.txt</code></pre>
   .pipe(join('\n'))  // Add the newlines back into your output
   .pipe(fs.createWriteStream('index.txt'))
 </pre></code>
+            <aside class="notes">
+              This is best exhibited by Bash's "pipe" operator, which allows you
+              to redirect the output of one process to the input of another one.
+
+              This makes them really easy to chain together to create more complex
+              streams.
+
+              Node has its own equivalent to UNIX streams built into Node core.
+              Most I/O sources are available as streams, which can be easily piped
+              from one target to another. These two examples are equivalent.
+
+              Streams emit individual chunks of data, meaning that you can take a
+              huge data set and push it through a pipeline without worrying about
+              loading everything at once and running out of memory. As a plus point,
+              you can start seeing results as soon as they're ready.
+            </aside>
           </section>
           <section>
             <h2>Streams are hard to write</h2>
+            <aside class="notes">
+              Just a warning: Node streams are notoriously difficult to write, and understand
+              the inner workings of. This'll be improving eventually, but don't hold your breath.
+            </aside>
           </section>
           <section>
             <h2>But easy to use</h2>
+            <aside class="notes">
+              However Node streams are also really easy to use, so you can mostly rely on
+              the previous work of people who have written and published modules for specific
+              problems to npm.
+            </aside>
           </section>
         </section>
         <section>
