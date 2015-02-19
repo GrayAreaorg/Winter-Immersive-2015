@@ -12,6 +12,7 @@ var giphy = require('giphy')(token)
 // Sets off the translate API. Currently this won't run – you'll need
 // to specify a search parameter, and then log the resulting URL out
 // to the terminal.
-giphy.translate({}, function(err, data) {
+giphy.translate({ s: 'cat' }, function(err, data) {
   if (err) throw err
+  console.log(data.data.url)
 })
