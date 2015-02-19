@@ -57,37 +57,41 @@ Create a TCP chat server and client.
 
 ### Sockets and Servers
 
-* [module.exports](http://nodejs.org/api/all.html#all_module_exports)
-* [Dependency Trees](http://maxogden.com/nested-dependencies.html)
-* [semver](http://semver-ftw.org/)
-* [require.resolve](http://nodejs.org/api/all.html#all_require_resolve)
 * [HTTP](http://nodejs.org/api/http.html)
+* [package.json](https://docs.npmjs.com/files/package.json)
 * Node and [Express](http://expressjs.com/)
+* **Example**: [express-hello-world](examples/day-2/01-express-hello-world)
 * [Express Middleware](http://expressjs.com/resources/middleware.html)
-* Simple Express Server
+* **Example**: [express-middleware](examples/day-2/02-express-middleware)
+* **Example**: [express-static](examples/day-2/03-express-static)
 * [socket.io](http://socket.io/): hello world
+* **Example**: [socketio-setup](examples/day-2/04-socketio-setup)
+* **Example**: [socketio-send](examples/day-2/04-socketio-send)
 * socket.io: broadcasting data
+* **Example**: [socketio-recieve](examples/day-2/04-socketio-recieve)
 
-### Assignment #3: creating a socket.io chat server
+### Assignment #3: Giphy Chat
 
-Following the examples provided, create a web-based chat server/client using
-Express and socket.io. Once complete, try adding functionality from Tuesday's
-TCP-based servers.
+Using the examples provided, create a web-based chat server/client using
+Express and socket.io.
+
+*However*, instead of sending text between clients, use the giphy translate API we [experimented with on Tuesday](examples/day-1/02-giphy/index.js) to turn everybody's messages into GIFs.
 
 ### Interfacing With Hardware
 
-* Node and I/O
 * [NodeBots](http://nodebots.io/)
-* Serial Ports
 * [Firmata](http://www.firmata.org/wiki/Main_Page)
 * [Johnny Five](https://github.com/rwaldron/johnny-five)
-* Johnny Five: Reading Data
-* Johnny Five: Writing Data
+* **Example**: [arduino-blinker](examples/day-2/08-arduino-blinker)
+* **Example**: [arduino-button](examples/day-2/09-arduino-button)
 
-### Assignment #4: get Node talking to an Arduino
+### Assignment #4: Arduino Chat
 
-Using Johnny Five and an Arduino, either get data streaming back
-into Node or trigger output on your Arduino from Node.
+Building on top of our chat server:
+
+1. Make an LED start strobing whenever a message is sent.
+2. Send a message to clients on pressing a button.
+3. Move a servo in response on incoming messages.
 
 ## Day 3: Web APIs
 
