@@ -60,15 +60,15 @@ Create a TCP chat server and client.
 * [HTTP](http://nodejs.org/api/http.html)
 * [package.json](https://docs.npmjs.com/files/package.json)
 * Node and [Express](http://expressjs.com/)
-* **Example**: [express-hello-world](examples/day-2/01-express-hello-world)
+* **Example**: [express-hello-world](examples/day-2/01-express-hello-world/app.js)
 * [Express Middleware](http://expressjs.com/resources/middleware.html)
-* **Example**: [express-middleware](examples/day-2/02-express-middleware)
-* **Example**: [express-static](examples/day-2/03-express-static)
+* **Example**: [express-middleware](examples/day-2/02-express-middleware/app.js)
+* **Example**: [express-static](examples/day-2/03-express-static/app.js)
 * [socket.io](http://socket.io/): hello world
-* **Example**: [socketio-setup](examples/day-2/04-socketio-setup)
-* **Example**: [socketio-send](examples/day-2/04-socketio-send)
+* **Example**: [socketio-setup](examples/day-2/04-socketio-setup/app.js)
+* **Example**: [socketio-send](examples/day-2/04-socketio-send/app.js)
 * socket.io: broadcasting data
-* **Example**: [socketio-recieve](examples/day-2/04-socketio-recieve)
+* **Example**: [socketio-recieve](examples/day-2/04-socketio-recieve/app.js)
 
 ### Assignment #3: Giphy Chat
 
@@ -82,8 +82,8 @@ Express and socket.io.
 * [NodeBots](http://nodebots.io/)
 * [Firmata](http://www.firmata.org/wiki/Main_Page)
 * [Johnny Five](https://github.com/rwaldron/johnny-five)
-* **Example**: [arduino-blinker](examples/day-2/08-arduino-blinker)
-* **Example**: [arduino-button](examples/day-2/09-arduino-button)
+* **Example**: [arduino-blinker](examples/day-2/08-arduino-blinker/app.js)
+* **Example**: [arduino-button](examples/day-2/09-arduino-button/app.js)
 
 ### Assignment #4: Arduino Chat
 
