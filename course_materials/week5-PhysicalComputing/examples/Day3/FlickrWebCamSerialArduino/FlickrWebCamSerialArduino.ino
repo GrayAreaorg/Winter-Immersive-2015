@@ -7,7 +7,7 @@ void setup() {
 
 void loop() {
    // read the potentiometer, reduce the range to 0 - 255 by dividing by 4:
-   int analogValue = analogRead(0) /4;
+   int analogValue = analogRead(0) / 4;
    int outputValue = map(analogValue, 0, 255, 0, 150);
    // use that to control the transistor:
    if (analogValue > 128) {

@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 var serialport = new SerialPort("/dev/tty.usbmodem1411", {
 	baudRate: 9600,
 	// look for return and newline at the end of each data packet:
-	parser: serialport.parsers.readline("\n")
+	parser: serialport.parsers.readline("\r\n")
 });
 
 
