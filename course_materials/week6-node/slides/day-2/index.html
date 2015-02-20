@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Node.js: Day 1</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <style media="screen">
+      .reveal blockquote {
+        padding: 2rem;
+        font-size: 1.5rem;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Day 2: Input and Output</h1>
+        </section>
+        <section>
+          <h1>Sockets and Servers</h1>
+        </section>
+        <section>
+          <h2>HTTP</h2>
+          <ul>
+            <li>Built on top of TCP</li>
+            <li>Used by browsers to serve web pages</li>
+          </ul>
+          <img src="img/http.png" alt="" />
+        </section>
+        <section>
+          <h2>Request/Response</h2>
+          <section>
+            <img src="img/request.png" style="border:0;background:transparent;box-shadow:none" />
+          </section>
+          <section>
+            <img src="img/response.png" style="border:0;background:transparent;box-shadow:none" />
+          </section>
+        </section>
+        <section>
+          <h2><a href="http://expressjs.org/">Express</a></h2>
+          <section>
+            <p>
+              Fast, unopinionated, minimalist web framework for Node.js
+            </p>
+          </section>
+          <section>
+            <p>
+              Express is very small, but makes writing Node servers a lot more pleasant.
+            </p>
+          </section>
+          <section>
+            <h2>Example: A Simple Express Server</h2>
+            <code>
+              examples/day-2/01-express-hello-world
+            </code>
+          </section>
+          <section>
+            <h2><a href="http://expressjs.com/resources/middleware.html">Middleware</a></h2>
+            <p>
+              Small isolated "chunks" of server functionality.
+            </p>
+            <ul>
+              <li>Serving files</li>
+              <li>Submitting form data</li>
+              <li>URL handling</li>
+              <li>Automatic compression</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Example: Middleware</h2>
+            <code>
+              examples/day-2/02-express-middleware
+            </code>
+          </section>
+          <section>
+<pre class="javascript"><code>var staticServe = require('static-server')
+
+// Serves the current script's directory as a static server
+app.use(staticServe(__dirname))</code></pre>
+          </section>
+          <section>
+            <h2>Example: Using static-serve</h2>
+            <code>
+              examples/day-2/03-express-static-server
+            </code>
+          </section>
+        </section>
+        <section>
+          <h2>Socket.IO</h2>
+          <section>
+            <p>
+              Realtime messaging between browsers
+            </p>
+          </section>
+          <section>
+            <h2>Example: Setting up Socket.IO</h2>
+            <code>
+              examples/day-2/04-socketio-setup
+            </code>
+          </section>
+          <section>
+            <h2>Example: Browser to Server</h2>
+            <code>
+              examples/day-2/05-socketio-send
+            </code>
+          </section>
+          <section>
+            <h2>Example: Broadcasting Browser to Browser</h2>
+            <code>
+              examples/day-2/05-socketio-recieve
+            </code>
+          </section>
+        </section>
+        <section>
+          <h1>Assignment #3</h1>
+          <h2>Giphy Chat</h2>
+          <p>
+            Using the examples provided, create a web-based chat server/client using Express and socket.io.
+          </p><p>
+            <em>However</em>, instead of sending text between clients, use the giphy translate API we experimented with on Tuesday to turn everybody's messages into GIFs.
+          </p>
+        </section>
+        <section>
+          <section>
+            <h1>Interfacing with Hardware</h1>
+          </section>
+          <section>
+            <h2>NodeBots</h2>
+            <a href="http://nodebots.io"><img src="img/nodebots.png"/></a>
+          </section>
+          <section>
+            <h2>Firmata</h2>
+            <ul>
+              <li>A general purpose protocol for hardware to talk with other devices.</li>
+              <li>Allows the Arduino to speak to Node in a way that they both understand.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Installing Firmata</h2>
+            <ul>
+              <li>Install Arduino app</li>
+              <li>Connect Arduino</li>
+              <li>Tools > Serial Port</li>
+              <li>Tools > Board > Arduino Uno</li>
+              <li>File > Examples > Firmata > StandardFirmata</li>
+              <li>Build and Upload</li>
+            </ul>
+          </section>
+          <section>
+            <h2><a href="https://github.com/rwaldron/johnny-five">Johnny Five</a></h2>
+            <img src="img/johnny-five.png"/>
+          </section>
+          <section>
+            <h2>Helper Library for Node &amp; Arduino</h2>
+            <ul>
+              <li>LED Lights</li>
+              <li>LCD Screens</li>
+              <li>Servos</li>
+              <li>Buttons</li>
+              <li>Accelerometers</li>
+              <li>etc.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Example: Blinking a Light</h2>
+            <code>
+              examples/day-2/08-arduino-blinker
+            </code>
+          </section>
+          <section>
+            <h2>Example: Responding to Button Presses</h2>
+            <code>
+              examples/day-2/09-arduino-button
+            </code>
+          </section>
+        </section>
+        <section>
+          <h1>Assignment #4</h1>
+          <h2>Arduino Chat</h2>
+          <p>
+            Building on top of our chat server:
+          </p>
+          <ul>
+            <li>Make an LED start strobing whenever a message is sent.</li>
+            <li>Send a message to clients on pressing a butotn.</li>
+            <li>Move a servo in response to incoming messsages.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
