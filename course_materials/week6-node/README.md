@@ -98,7 +98,7 @@ Building on top of our chat server:
 
 ### Twitter APIs
 
-* [Random Shopper](http://randomshopper.tumblr.com/)
+* [Random Shopper](http://randomshopper.tumblr.com/post/35454415921/randomized-consumerism)
 * [Random Darknet Shopper](https://wwwwwwwwwwwwwwwwwwwwww.bitnik.org/r/)
 * [Darius Kazemi](http://tinysubversions.com/projects/)'s Twitter Bots
 * Twitter Streams

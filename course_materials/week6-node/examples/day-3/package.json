@@ -1,0 +1,7 @@
+{
+  "name": "gray-area-node-examples-day-3",
+  "private": true,
+  "dependencies": {
+    "twitter": "~1.2.1"
+  }
+}

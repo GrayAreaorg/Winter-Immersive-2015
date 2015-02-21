@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Node.js: Day 1</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <style media="screen">
+      .reveal blockquote {
+        padding: 2rem;
+        font-size: 1.5rem;
+      }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Day 3: Web APIs</h1>
+        </section>
+        <section>
+          <h1>Bot Art</h1>
+        </section>
+        <section>
+          <h2>
+            <a href="http://randomshopper.tumblr.com/post/35454415921/randomized-consumerism">Random Shopper</a>
+          </h2>
+          <section>
+            <blockquote>
+              …How about I build something that buys me things completely at random? Something that just… fills my life with crap? How would these purchases make me feel? Would they actually be any less meaningful than the crap I buy myself on a regular basis anyway?
+            </blockquote>
+          </section>
+          <section>
+            <p>
+              Uses <a href="http://phantomjs.org/">PhantomJS</a> – a virtual, scriptable web browser –
+              to crawl Amazon and deliver random surprise purchases.
+            </p>
+            <p>
+              Results were catalogued on the project's
+              <a href="http://randomshopper.tumblr.com">Tumblr</a>.
+            </p>
+          </section>
+          <section>
+            <img src="img/shopper-01.jpg" style="width: auto; height: 50vh; min-height: 300px"/>
+          </section>
+          <section>
+            <img src="img/shopper-02.jpg" style="width: auto; height: 50vh; min-height: 300px"/>
+          </section>
+          <section>
+            <img src="img/shopper-03.jpg" style="width: auto; height: 50vh; min-height: 300px"/>
+          </section>
+          <section>
+            <img src="img/shopper-04.jpg" style="width: auto; height: 50vh; min-height: 300px"/>
+          </section>
+        </section>
+        <section>
+          <h2>
+            <a href="https://wwwwwwwwwwwwwwwwwwwwww.bitnik.org/r/">Random Darknet Shopper</a>
+          </h2>
+          <section>
+            <blockquote>
+              The Random Darknet Shopper is an automated online shopping bot which we
+              provide with a budget of $100 in Bitcoins per week. Once a week the bot goes
+              on shopping spree in the deep web where it randomly choses and purchases one
+              item and has it mailed to us.
+            </blockquote>
+          </section>
+          <section>
+            <h2>"Darknet"</h2>
+            <blockquote cite="http://en.wikipedia.org/wiki/Darknet_%28file_sharing%29">
+              A darknet is a private network where connections are made only between trusted peers — sometimes called "friends" — using non-standard protocols and ports.
+              Darknets are distinct from other distributed peer-to-peer networks as sharing is anonymous.
+            </blockquote>
+            <p>
+            </p>
+          </section>
+          <section>
+            <ul>
+              <li>Anonymous File Sharing</li>
+              <li>Whistleblower Protection</li>
+              <li>Online Black Markets</li>
+            </ul>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-01.png"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-02.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-03.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-04.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-05.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-07.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-08.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-06.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-09.jpg"/>
+          </section>
+          <section>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/darknet-10.png"/>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Twitter Bots</h2>
+          </section>
+          <section>
+            <h2><a target="_blank" href="http://twitter.com/artassignbot">@artassignbot</a></h2>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/twitter-03.png"/>
+          </section>
+          <section>
+            <h2><a target="_blank" href="http://twitter.com/int3rn3tdr3ctry">@int3rn3tdr3ctry</a></h2>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/twitter-02.png"/>
+          </section>
+          <section>
+            <h2><a target="_blank" href="https://twitter.com/neweraesthetics">@neweraesthetics</a></h2>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/twitter-05.png"/>
+          </section>
+          <section>
+            <h2><a target="_blank" href="https://twitter.com/a_quilt_bot/status/514477040615948288">@a_quilt_bot/@pixelsorter</a></h2>
+            <img style="width: auto; height: 50vh; min-height: 300px" src="img/twitter-04.png"/>
+          </section>
+        </section>
+        <section>
+          <h2>Twitter Streams</h2>
+          <section>
+            <h3>re:publica 2012 analogue twitter wall</h3>
+            <iframe src="//player.vimeo.com/video/41442329" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </section>
+          <section>
+            <h3>
+              <a target="_blank" href="http://www.emojitracker.com/">Emoji Tracker</a>
+            </h3>
+          </section>
+          <section>
+            <h3>Emoto Visualisation</h3>
+            <iframe src="//player.vimeo.com/video/46615102" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </section>
+          <section>
+            <h3>Emoto Data Sculpture</h3>
+            <iframe src="//player.vimeo.com/video/49679699" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </section>
+        </section>
+        <section>
+          <h1>Twitter API</h1>
+        </section>
+        <section>
+          <h2>Getting Set Up</h2>
+          <section>
+            <h2>Register a New Account on Twitter</h2>
+            <p>
+              (You can use <em>name+text@example.com</em> to reuse your email address)
+            </p>
+          </section>
+          <section>
+            <h2>Confirm Your Email Address</h2>
+          </section>
+          <section>
+            <h2>Confirm Your Mobile Number</h2>
+            <a target="_blank" href="https://twitter.com/settings/add_phone">https://twitter.com/settings/add_phone</a>
+          </section>
+          <section>
+            <h2>Visit <a target="_blank" href="http://apps.twitter.com">apps.twitter.com</a></h2>
+          </section>
+          <section>
+            <h2>Create an Application</h2>
+            <img src="img/setup-01.jpg" style="width: auto; max-height: 50vh; min-height: 100px"/>
+            <ul>
+              <li>Set "Website" to Anything</li>
+              <li>Leave "Callback URL" Blank</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Update Permissions</h2>
+            <img src="img/setup-02.png" style="width: auto; max-height: 50vh; min-height: 100px"/>
+          </section>
+          <section>
+            <h2>Create an Access Token</h2>
+            <img src="img/setup-03.jpg" style="width: auto; max-height: 50vh; min-height: 100px"/>
+          </section>
+          <section>
+            <h2>Keep "Access Tokens" tab open</h2>
+          </section>
+        </section>
+        <section>
+          <h2>Example: Twitter Favorites</h2>
+          <code>examples/day-3/01-twitter-favorites</code>
+        </section>
+        <section>
+          <h2>Example: Twitter Stream</h2>
+          <code>examples/day-3/02-twitter-stream</code>
+        </section>
+        <section>
+          <h2>Example: Posting Tweets</h2>
+          <code>examples/day-3/03-twitter-tweet</code>
+        </section>
+        <section>
+          <h2>Example: Uploading Images</h2>
+          <code>examples/day-3/04-twitter-upload</code>
+        </section>
+        <section>
+          <h2>Example: Processing to Twitter</h2>
+          <code>examples/day-3/05-twitter-processing</code>
+        </section>
+        <section>
+          <h1>Assignment #5: API experimentation</h1>
+          <p>
+            Create a project that creatively utilises one or more of Twitter's APIs. This
+            could be a Twitter bot, image generator/processor, visualisation, physical
+            manifestation or anything else that comes to mind.
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+  </body>
+</html>
