@@ -2,6 +2,7 @@
 
 * [**Day 1 Slides ↓**](https://github.com/GrayAreaorg/Winter-Immersive-2015/raw/master/course_materials/week6-node/slides/day-1.pdf)
 * [**Day 2 Slides ↓**](https://github.com/GrayAreaorg/Winter-Immersive-2015/raw/master/course_materials/week6-node/slides/day-2.pdf)
+* [**Day 3 Slides ↓**](https://github.com/GrayAreaorg/Winter-Immersive-2015/raw/master/course_materials/week6-node/slides/day-3.pdf)
 
 ## Day 1: Node 101
 
