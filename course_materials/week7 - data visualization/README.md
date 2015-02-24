@@ -18,4 +18,20 @@
 [Accurat: My reign for a (solved) paradox](http://media-cache-ak0.pinimg.com/originals/42/90/10/4290100c6aa2702308d8e823c904f3a3.jpg)  
 [Jerome Cukier: Events in the Game of Thrones](http://www.jeromecukier.net/projects/agot/events.html)  
 
+####Intro to D3.js
+[An Interactive Introduction to D3.js](http://sxywu.github.io/d3intro/)
+
+**More resources:**
+[D3.js front page](http://d3js.org/)
+[Three Little Circles](http://bost.ocks.org/mike/circles/)
+[Let's Make a Bar Chart](http://bost.ocks.org/mike/bar/)
+[D3.js list of tutorials](https://github.com/mbostock/d3/wiki/Tutorials)
+Further reading: [How Selections Work](http://bost.ocks.org/mike/selection/)
+
+**Examples:**
+[D3 Show Reel](http://bl.ocks.org/mbostock/1256572)
+[Simple Bar Chart](http://bl.ocks.org/mbostock/3885304)
+[Radial Reingold–Tilford Tree](http://bl.ocks.org/mbostock/4063550)
+[Force layout](http://bl.ocks.org/mbostock/4062045)
+
 -
