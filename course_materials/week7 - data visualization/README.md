@@ -21,17 +21,17 @@
 ####Intro to D3.js
 [An Interactive Introduction to D3.js](http://sxywu.github.io/d3intro/)
 
-**More resources:**
-[D3.js front page](http://d3js.org/)
-[Three Little Circles](http://bost.ocks.org/mike/circles/)
-[Let's Make a Bar Chart](http://bost.ocks.org/mike/bar/)
-[D3.js list of tutorials](https://github.com/mbostock/d3/wiki/Tutorials)
-Further reading: [How Selections Work](http://bost.ocks.org/mike/selection/)
+**More resources:**  
+[D3.js front page](http://d3js.org/)  
+[Three Little Circles](http://bost.ocks.org/mike/circles/)  
+[Let's Make a Bar Chart](http://bost.ocks.org/mike/bar/)  
+[D3.js list of tutorials](https://github.com/mbostock/d3/wiki/Tutorials)  
+Further reading: [How Selections Work](http://bost.ocks.org/mike/selection/)  
 
-**Examples:**
-[D3 Show Reel](http://bl.ocks.org/mbostock/1256572)
-[Simple Bar Chart](http://bl.ocks.org/mbostock/3885304)
-[Radial Reingold–Tilford Tree](http://bl.ocks.org/mbostock/4063550)
-[Force layout](http://bl.ocks.org/mbostock/4062045)
+**Examples:**  
+[D3 Show Reel](http://bl.ocks.org/mbostock/1256572) 
+[Simple Bar Chart](http://bl.ocks.org/mbostock/3885304)  
+[Radial Reingold–Tilford Tree](http://bl.ocks.org/mbostock/4063550)  
+[Force layout](http://bl.ocks.org/mbostock/4062045)  
 
 -
