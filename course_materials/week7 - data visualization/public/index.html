@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+	    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <script src="http://underscorejs.org/underscore-min.js"></script>
+	    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+	    <style>
+
+	    	svg {
+	    		margin: 20px;
+	    		height: 500px;
+	    		display: block;
+	    		width: 100%;
+	    	}
+	    </style>
+	</head>
+
+	<body>
+
+		<svg></svg>
+
+		<script>
+			d3.json('data/nodes.json', function(nodes) {
+				d3.json('data/links.json', function(links) {
+					_.each(links, function(link) {
+						link.source = nodes[link.source];
+						link.target = nodes[link.target];
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

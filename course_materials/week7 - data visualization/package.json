@@ -1,0 +1,11 @@
+{
+  "name": "superbowl",
+  "dependencies": {
+    "express": "*",
+    "twit": "*",
+    "twitter": "*",
+    "johnny-five": "*",
+    "d3": "*",
+    "lodash": "*"
+  }
+}
