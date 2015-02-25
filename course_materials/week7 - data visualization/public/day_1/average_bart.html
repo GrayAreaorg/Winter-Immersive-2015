@@ -26,7 +26,11 @@
 
     <script>
       d3.csv('/data/bart-comp-all.csv', function(bart) {
-       var averageSalary = _.chain(bart)
+       // "bart" is an array of employee compensation data
+       // 1.  group the employees by their position ("Title")
+       // 2.  for each position, calculate average salary and number of employees
+       // 3.  sort by number of employees for each position
+        var averageSalary = _.chain(bart)
          .groupBy(function(employee) {
            return employee.Title;
          }).map(function(employees) {
@@ -42,20 +46,26 @@
            return -position.count;
          }).value();
 
+       var height = 500;
+       // get the minimum and maximum average salary by position
+       // and pass it into the y-scale
        var minAvg = d3.min(averageSalary, function(position) {
          return position.average;
        });
        var maxAvg = d3.max(averageSalary, function(position) {
          return position.average;
        });
-
-       var height = 500;
        var yScale = d3.scale.linear()
          .domain([minAvg, maxAvg])
          .range([0, height])
+
+      // grab the svg element so we can append the bars to it
        var svg = d3.select('svg');
+       // select all bars in the svg element (starts with none)
        var rect = svg.selectAll('rect.bar')
+        // bind the salary data to the not-yet-existing bars
          .data(averageSalary)
+         // and create them
          .enter().append('rect')
            .classed('bar', true)
            .attr('x', function(d, i) {
@@ -63,10 +73,11 @@
            }).attr('width', 4)
            .attr('y', function(d) {
              return height - yScale(d.average);
-           })
-           .attr('height', function(d) {
+           }).attr('height', function(d) {
              return yScale(d.average);
            }).on('mouseover', function(d) {
+            // on hover, display the position's title,
+            // number of employees, and average salary
              var text = d.title + '(' + d.count + ')' + ': ' + d.average;
              d3.select('div.content')
                .text(text);
