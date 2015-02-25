@@ -25,6 +25,22 @@
 		<svg></svg>
 
 		<script>
+			d3.csv('data/bart-comp-all.csv', function(bart) {
+				var averageSalary = _.chain(bart)
+					.groupBy(function(employee) {
+						return employee.Title;
+					}).map(function(employees) {
+						var sumSalary = _.reduce(employees, function(memo, employee) {
+							return memo + parseInt(employee.Base);
+						}, 0);
+						return {
+							title: employees[0].Title,
+							average: sumSalary / employees.length
+						}
+					}).value();
+					
+			});
+
 			d3.json('data/nodes.json', function(nodes) {
 				d3.json('data/links.json', function(links) {
 					_.each(links, function(link) {
@@ -33,6 +49,7 @@
 					});
 				});
 			});
+
 		</script>
 	</body>
 
