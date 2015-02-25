@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="http://underscorejs.org/underscore-min.js"></script>
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+      <style>
+
+        svg {
+          margin: 20px;
+          height: 10000px;
+          display: block;
+          width: 10000px;
+        }
+      </style>
+  </head>
+
+  <body>
+    <div class="content"></div>
+    <svg></svg>
+
+    <script>
+      d3.csv('/data/bart-comp-all.csv', function(bart) {
+       var averageSalary = _.chain(bart)
+         .groupBy(function(employee) {
+           return employee.Title;
+         }).map(function(employees) {
+           var sumSalary = _.reduce(employees, function(memo, employee) {
+             return memo + parseInt(employee.Base);
+           }, 0);
+           return {
+             count: employees.length,
+             title: employees[0].Title,
+             average: sumSalary / employees.length
+           }
+         }).sortBy(function(position) {
+           return -position.count;
+         }).value();
+
+       var minAvg = d3.min(averageSalary, function(position) {
+         return position.average;
+       });
+       var maxAvg = d3.max(averageSalary, function(position) {
+         return position.average;
+       });
+
+       var height = 500;
+       var yScale = d3.scale.linear()
+         .domain([minAvg, maxAvg])
+         .range([0, height])
+       var svg = d3.select('svg');
+       var rect = svg.selectAll('rect.bar')
+         .data(averageSalary)
+         .enter().append('rect')
+           .classed('bar', true)
+           .attr('x', function(d, i) {
+             return i * 5;
+           }).attr('width', 4)
+           .attr('y', function(d) {
+             return height - yScale(d.average);
+           })
+           .attr('height', function(d) {
+             return yScale(d.average);
+           }).on('mouseover', function(d) {
+             var text = d.title + '(' + d.count + ')' + ': ' + d.average;
+             d3.select('div.content')
+               .text(text);
+           });
+      });
+    </script>
+  </body>
+
+</html>

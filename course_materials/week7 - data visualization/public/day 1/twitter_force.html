@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="http://underscorejs.org/underscore-min.js"></script>
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+      <style>
+
+        svg {
+          margin: 20px;
+          height: 10000px;
+          display: block;
+          width: 10000px;
+        }
+      </style>
+  </head>
+
+  <body>
+    <div class="content"></div>
+    <svg></svg>
+
+    <script>
+      d3.json('/data/nodes.json', function(nodes) {
+        d3.json('/data/links.json', function(links) {
+          _.each(links, function(link) {
+            link.source = nodes[link.source];
+            link.target = nodes[link.target];
+          });
+
+          nodes = _.values(nodes);
+          links = _.values(links);
+          var force = d3.layout.force()
+            .size([1000, 1000])
+            .charge(-100)
+            .linkDistance(75);
+
+          force.nodes(nodes).links(links);
+
+          var svg = d3.select('svg');
+          var circle = svg.selectAll('circle')
+            .data(nodes).enter().append('circle')
+              .attr('r', 5)
+              .attr('fill', 'blue')
+              .call(force.drag)
+              .on('mouseover', function(d) {
+                var text = d.name + ':<br>';
+                text += _.map(d.tweets, function(tweet) {
+                  return tweet.status;
+                }).join('<br>');
+                d3.select('div.content').html(text);
+              });
+
+          var line = svg.selectAll('line')
+            .data(links).enter().append('line')
+              .attr('stroke-width', 2)
+              .attr('stroke', 'blue');
+
+          force.on('tick', function() {
+            circle.attr('cx', function(d) {
+              return d.x;
+            }).attr('cy', function(d) {
+              return d.y;
+            });
+
+            line.attr('x1', function(d) {
+              return d.source.x;
+            }).attr('y1', function(d) {
+              return d.source.y;
+            }).attr('x2', function(d) {
+              return d.target.x;
+            }).attr('y2', function(d) {
+              return d.target.y;
+            });
+          });
+
+          force.start();
+        });
+      });
+
+    </script>
+  </body>
+
+</html>
