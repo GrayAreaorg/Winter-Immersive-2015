@@ -43,6 +43,11 @@ Further reading: [How Selections Work](http://bost.ocks.org/mike/selection/)
 Run `npm install` to get all third-party dependencies.  
 Run `node server.js` to start server and navigate to `localhost:8000`.
 
+**Average BART Salary by Position**: [code on github](https://github.com/GrayAreaorg/Winter-Immersive-2015/blob/master/course_materials/week7%20-%20data%20visualization/public/day_1/average_bart.html)  
+To view locally, navigate to `http://localhost:8000/day_1/average_bart.html`.  
+**Twitter Force Graph**: [code on github](https://github.com/GrayAreaorg/Winter-Immersive-2015/blob/master/course_materials/week7%20-%20data%20visualization/public/day_1/twitter_force.html)  
+To view locally, nagivate to `http://localhost:8000/day_1/twitter_force.html`
+
 
 -
 
