@@ -60,4 +60,10 @@ To view locally, nagivate to `http://localhost:8000/day_1/twitter_force.html`
 [Whitehouse API](http://www.whitehouse.gov/developers): most interesting repo I've found is the [2016 budget data on Github](https://github.com/WhiteHouse/2016-budget-data)  
 [Open Journalism](https://github.com/showcases/open-journalism): a Github collection of different news agencies' repositories, many with data sets that they've explored and used  
 
-
+[Twitter REST API](https://dev.twitter.com/rest/public)    
+[Twitter Streaming API](https://dev.twitter.com/streaming/overview)  
+[Facebook Graph API](https://developers.facebook.com/docs/graph-api/reference/)  
+[Instagram API](https://instagram.com/developer/)  
+[Youtube API](https://developers.google.com/youtube/v3/)  
+[Flickr API](https://developer.yahoo.com/flickr/)  
+[Yelp API](https://www.yelp.com/developers)
