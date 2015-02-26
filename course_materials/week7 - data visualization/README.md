@@ -53,7 +53,7 @@ To view locally, nagivate to `http://localhost:8000/day_1/twitter_force.html`
 
 ###Day 2
 
-####Where to get data
+####Where to get the data
 **Application Programming Interface (API)** defines the inputs, outputs, and functionality for a set of programs.
 
 [Data.gov API](http://catalog.data.gov/dataset?q=-aapi+api+OR++res_format%3Aapi#topic=developers_navigation): data from many government agencies (seems quite robust, but hard to navigate through from personal experience)  
@@ -67,3 +67,21 @@ To view locally, nagivate to `http://localhost:8000/day_1/twitter_force.html`
 [Youtube API](https://developers.google.com/youtube/v3/)  
 [Flickr API](https://developer.yahoo.com/flickr/)  
 [Yelp API](https://www.yelp.com/developers)
+
+###How to clean the data
+[Underscore.js](http://underscorejs.org/): "a whole mess of useful functional programming helpers"  
+
+**Some particularly helpful functions**:  
+[_.each](http://underscorejs.org/#each): loops through each element in the array  
+[_.map](http://underscorejs.org/#map): loops through each element in the array, and creates a new array based on what you `return` at each iteration   
+[_.filter](http://underscorejs.org/#filter): loops through each element in the array, and creates a new array with only the objects you `return`ed true at each iteration
+[_.sortBy](http://underscorejs.org/#sortBy): loops through each element, and creates a new array sorted by your `return` value at each iteration
+[_.groupBy](http://underscorejs.org/#groupBy): loops through each element, and creates a new object, where the `key` is the `return` value you've specified at each iteration, and `value` is an array of all the elements that fall in that group
+[_.countBy](http://underscorejs.org/#countBy): loops through each element, and creates a new object, where the `key` is the `return` value you've specified at each iteration, and `value` is the number of elements that fall in that category
+
+
+####Exercises
+
+-
+
+###Day 3
