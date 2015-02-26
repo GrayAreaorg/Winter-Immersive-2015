@@ -38,7 +38,7 @@ Further reading: [How Selections Work](http://bost.ocks.org/mike/selection/)
 [Force layout](http://bl.ocks.org/mbostock/4062045)  
 
 
-###Exercise
+####Exercise
 `git clone` this directory if you haven't already done so, and `git pull` the latest changes.  
 Run `npm install` to get all third-party dependencies.  
 Run `node server.js` to start server and navigate to `localhost:8000`.
@@ -52,3 +52,12 @@ To view locally, nagivate to `http://localhost:8000/day_1/twitter_force.html`
 -
 
 ###Day 2
+
+####Where to get data
+**Application Programming Interface (API)** defines the inputs, outputs, and functionality for a set of programs.
+
+[Data.gov API](http://catalog.data.gov/dataset?q=-aapi+api+OR++res_format%3Aapi#topic=developers_navigation): data from many government agencies (seems quite robust, but hard to navigate through from personal experience)  
+[Whitehouse API](http://www.whitehouse.gov/developers): most interesting repo I've found is the [2016 budget data on Github](https://github.com/WhiteHouse/2016-budget-data)  
+[Open Journalism](https://github.com/showcases/open-journalism): a Github collection of different news agencies' repositories, many with data sets that they've explored and used  
+
+
