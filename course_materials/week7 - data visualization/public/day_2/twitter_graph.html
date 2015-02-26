@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css" />
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script src="http://underscorejs.org/underscore-min.js"></script>
+      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+      <style>
+
+        svg {
+          margin: 20px;
+          height: 10000px;
+          display: block;
+          width: 20000px;
+        }
+      </style>
+  </head>
+
+  <body>
+
+    <svg>
+
+    </svg>
+
+    <script>
+    d3.json('/data/tweets.json', function(response) {
+      var nodes = {};
+      var links = {};
+      var defaultImage = "http://img3.wikia.nocookie.net/__cb20140501181347/creepypasta/images/f/f6/Grumpy_Cat.jpg";
+      // keep only objects in the array
+      // that have text and user information
+      var tweets = _.filter(response, function(node) {
+        return node.text && node.user;
+      });
+
+      _.each(tweets, function(node) {
+        var userId = node.user.id;
+        var replyToId = node.in_reply_to_user_id;
+        var tweetObj = {
+          timestamp: node.created_at,
+          status: node.text
+        };
+        // first add user to nodes
+        if (!nodes[userId]) {
+          // if not yet exist, add new
+          nodes[userId] = {
+            id: userId,
+            followers: node.user.followers_count,
+            name: node.user.name,
+            image: node.user.profile_image_url,
+            tweets: [tweetObj]
+          }
+        } else {
+          nodes[userId].tweets.push(tweetObj);
+        }
+        // then create link if there's a reply to
+        if (replyToId) {
+          // first check if target exists
+          if (!nodes[replyToId]) {
+            nodes[replyToId] = {id: replyToId, followers: 0};
+          }
+
+          var linkId = userId + ',' + replyToId;
+          var timestamp = node.created_at;
+          if (!links[linkId]) {
+            links[linkId] = {
+              id: linkId,
+              source: nodes[userId],
+              target: nodes[replyToId],
+              timestamps: [timestamp]
+            }
+          } else {
+            links[linkId].timestamps.push(timestamp);
+          }
+        }
+      });
+
+      // turn nodes & links into arrays instead of objects
+      nodes = _.values(nodes);
+      links = _.values(links);
+
+      // calculate minimum and maximum follower count
+      var minFollowers = _.min(nodes, function(node) {
+        return node.followers;
+      }).followers;
+      var maxFollowers = _.max(nodes, function(node) {
+        return node.followers;
+      }).followers;
+      var followerScale = d3.scale.linear()
+        .domain([minFollowers, maxFollowers])
+        .range([24, 120]);
+
+      // declare d3 force layout
+      var force = d3.layout.force()
+        .size([1000, 1000])
+        .linkDistance(75)
+        .charge(function(node) {
+          var size = followerScale(node.followers)
+          return -Math.pow(size, 2) / 10;
+        }).on('tick', function(e) {
+          // on each tick of the force simulation
+          // update the x and y attribute of the images
+          images.attr('x', function(node) {
+            return node.x - node.width / 2;
+          }).attr('y', function(node) {
+            return node.y - node.width / 2;
+          });
+          lines.attr('x1', function(link) {
+              return link.source.x;
+            }).attr('y1', function(link) {
+              return link.source.y;
+            }).attr('x2', function(link) {
+              return link.target.x;
+            }).attr('y2', function(link) {
+              return link.target.y;
+            });
+        });
+
+      // select svg
+      var svg = d3.select('svg');
+      // create svg image elements with the users' profile images
+      var lines = svg.selectAll('line')
+        .data(links).enter().append('line')
+          .attr('stroke', '#666');
+
+      var images = svg.selectAll('image')
+        .data(nodes)
+          .enter().append('image')
+          .attr('xlink:href', function(node) {
+            return node.image || defaultImage;
+          }).attr('width', function(node) {
+            node.width = followerScale(node.followers);
+            return node.width;
+          })
+          .attr('height', function(node) {
+            return node.width;
+          })
+          .call(force.drag());
+
+      // tell force layout to start
+      // its calculation simulations
+      // after passing in nodes data
+      force.nodes(nodes).links(links);
+      force.start();
+    })
+    </script>
+  </body>
+
+</html>
