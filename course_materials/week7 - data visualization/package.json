@@ -1,6 +1,7 @@
 {
-  "name": "superbowl",
+  "name": "week7 - data visualization",
   "dependencies": {
+    "socket.io": "*",
     "express": "*",
     "twit": "*",
     "twitter": "*",
