@@ -74,10 +74,10 @@ To view locally, nagivate to `http://localhost:8000/day_1/twitter_force.html`
 **Some particularly helpful functions**:  
 [_.each](http://underscorejs.org/#each): loops through each element in the array  
 [_.map](http://underscorejs.org/#map): loops through each element in the array, and creates a new array based on what you `return` at each iteration   
-[_.filter](http://underscorejs.org/#filter): loops through each element in the array, and creates a new array with only the objects you `return`ed true at each iteration
-[_.sortBy](http://underscorejs.org/#sortBy): loops through each element, and creates a new array sorted by your `return` value at each iteration
-[_.groupBy](http://underscorejs.org/#groupBy): loops through each element, and creates a new object, where the `key` is the `return` value you've specified at each iteration, and `value` is an array of all the elements that fall in that group
-[_.countBy](http://underscorejs.org/#countBy): loops through each element, and creates a new object, where the `key` is the `return` value you've specified at each iteration, and `value` is the number of elements that fall in that category
+[_.filter](http://underscorejs.org/#filter): loops through each element in the array, and creates a new array with only the objects you `return`ed true at each iteration  
+[_.sortBy](http://underscorejs.org/#sortBy): loops through each element, and creates a new array sorted by your `return` value at each iteration  
+[_.groupBy](http://underscorejs.org/#groupBy): loops through each element, and creates a new object, where the `key` is the `return` value you've specified at each iteration, and `value` is an array of all the elements that fall in that group  
+[_.countBy](http://underscorejs.org/#countBy): loops through each element, and creates a new object, where the `key` is the `return` value you've specified at each iteration, and `value` is the number of elements that fall in that category  
 
 
 ####Exercises
