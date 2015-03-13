@@ -1,6 +1,6 @@
 ## Grant Writing
 
-Example: [The Giving Tree - Burning Man 2007 (sans budget)](https://dl.dropboxusercontent.com/u/57158100/The%20Giving%20Tree%20-%20Burning%20Man%202007%20%28sans%20budget%29.pdf] 
+Example: [The Giving Tree - Burning Man 2007 (sans budget)](https://dl.dropboxusercontent.com/u/57158100/The%20Giving%20Tree%20-%20Burning%20Man%202007%20%28sans%20budget%29.pdf) 
 
 
 #### Elevator Pitch (1 paragraph)
