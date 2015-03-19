@@ -7,30 +7,30 @@ Examples
 
  - https://vimeo.com/43385747 (Dane Luttik - Projection Mapping short documentary) 
  - https://vimeo.com/85212054 (AntiVJ - The Ark)
- - Intricacies of broken surfaces
- - Audio/visual show
- - Pure aesthetic
- - (shape fitting)
+  - Intricacies of broken surfaces
+  - Audio/visual show
+  - Pure aesthetic
+  - (shape fitting)
  - https://www.youtube.com/watch?v=KToDmJbEE7Y (Masaru Ozaki - Chair)
- - (shape fitting)
- - Exploring form, gracefully
- - Positions the form as a landscape - as a panned shot in a film moving across rolling hills
+  - (shape fitting)
+  - Exploring form, gracefully
+  - Positions the form as a landscape - as a panned shot in a film moving across rolling hills
  - http://www.bioluminescent-forest.com/film/ (3hund - Bioluminescent Forest)
- - “Natural” augmentation
- - Lives as a video
- - (tracing)
- - http://www.bioluminescent-forest.com/ (documentation)
- - inspiration, preparation, production
- - http://www.bioluminescent-forest.com/behind-the-scenes/
+  - “Natural” augmentation
+  - Lives as a video
+  - (tracing)
+  - http://www.bioluminescent-forest.com/ (documentation)
+   - inspiration, preparation, production
+   - http://www.bioluminescent-forest.com/behind-the-scenes/
  - https://vimeo.com/18888136 (1024 Architecture - Perspective Lyrique)
- - Explore shadows
- - Interactivity
- - Spectacle
- - (digital overlay)
+  - Explore shadows
+  - Interactivity
+  - Spectacle
+  - (digital overlay)
  - https://vimeo.com/113000956 (Emmy Curl - Come Closer)
- - Illusory
- - Layered
- - (digital overlay)
+  - Illusory
+  - Layered
+  - (digital overlay)
 
 **Basics approaches**
 
