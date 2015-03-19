@@ -78,33 +78,38 @@ Javascript
 Day 2: Quads and meshes
 -----------------------
 
+True Image Masking (Processing)
+
+ - Create an image that has some solid fills and a transparent background
+  - This will be a masking layer
+ - Create the opposite of this image.  Fill the previous transparent voids, and make the previous fills transparent
+ - Live example
+
+Javascript
+
+ - https://github.com/glowbox/maptasticjs (Simple JavaScript library for Quad Mapping)
+ - Run local server with Node (if using external content)
+ - Texture mapping
+ - Live example
+
+Sequencing
+
+ - Make 3 quads using Maptastic
+ - Set a sequence of animations to happen
+  - Try something simple at first, like fading in different colors to different quads at sequenced timing
+ - Explore timing, overlap, and different types of animations - or content
+ - Live example
+
 **Challenge**
 
- - Experiment with quad mapping
+ - Experiment with quad mapping and masking
  - Either set up a collection of objects, or use an existing “scene” you see
  - Setup your projector
  - Choose a tool (we’ve covered Processing and Javascript)
  - Start mapping using multiple quads for multiple shapes or a combination for single complex shapes
  - Experiment with color, patterns, animations, and video
  - *Bonus*: include some form of interaction
-   - Mouse, keyboard, audio, external data
-
-**Mesh Mapping (3d projection mapping)**
-
-Examples
-
- - https://www.youtube.com/watch?v=7ZHef-hAvOM (The Light Factory - Projection Mapping on Bottle)
-
-Why
-
- - Complex geometries
- - Overlay interior information, not just boundary information
- - Complex geometries could be made with the creation of multiple Quads, but then each quad is independent, mesh mapping allows you to overlay (texture render) the entire complex geometry
-
-How
-
- - Build a 3d model, save as OBJ, import to Processing, do things with the mesh faces
- - This will be a live tutorial
+  - Mouse, keyboard, audio, external data
 
 
 
