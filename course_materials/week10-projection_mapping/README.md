@@ -63,19 +63,13 @@ Processing
 
  - http://keystonep5.sourceforge.net/ (Simple Processing library for Quad Mapping)
  - Texture mapping
- - Masking
-
-Javascript
-
- - https://github.com/glowbox/maptasticjs (Simple JavaScript library for Quad Mapping)
- - Run local server with Node (if using external content)
- - Texture mapping
- - Masking
+ - Masking with quads
+ - GIF loading and animating
 
 
 
 
-Day 2: Quads and meshes
+Day 2: Masking, JavaScript, and sequencing
 -----------------------
 
 True Image Masking (Processing)
@@ -115,7 +109,7 @@ Sequencing
 
 
 
-Day 3 - Build your own
+Day 3 - Develop your own
 ----------------------
 
 **Premium tools**
