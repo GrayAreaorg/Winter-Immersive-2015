@@ -3,6 +3,9 @@ What's in this folder?
 
 Explanation to come
 
+SimpleOpenNI library for Kinect 1473 (the one inside Processing only works for Kinect 1414)
+http://medienlabor.hs-osnabrueck.de/download/SimpleOpenNI_1.96_osx_kinect_1473.zip
+
 Processing code snippets
 --------------------------------------------
 
