@@ -128,3 +128,11 @@ Day 3 - Develop your own
  - Decide on a tool (or tools) and the approach (quads, mesh, or a combination)
  - Think hard about what the concept is.  Is it a story?  Is it an interactive spectacle? Is it augmenting the theatre space in a dynamic way?  What is it you are doing, and why?
  - Give yourself (or the group) enough time for content creation, modeling, calibration, and sequencing (of the content)
+
+Resources & Tutorials
+---------------------
+
+ - http://projection-mapping.org/tag/tutorial/
+ - http://resolume.com/blog/10750/awesome-set-of-projection-mapping-tutorials
+ - http://jmprocreative.com/the-illusive-world-of-video-projection-mapping-using-light-sound-to-manifest-imagination-in-the-physical-realm/ (about 1/5th down the page is a list of resources and tutorials)
+ - http://createdigitalmotion.com/2012/06/learn-3d-projection-mapping-from-the-start-with-vvvv-video/ (this one looks great)
