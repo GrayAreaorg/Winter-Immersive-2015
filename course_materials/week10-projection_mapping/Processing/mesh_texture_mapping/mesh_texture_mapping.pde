@@ -1,3 +1,11 @@
+/*
+  Press 'c' to toggle calibration
+  Press 's' to save calibration
+  Press 'l' to load previous calibration
+  
+  Change "gridCellCount" to change the resolution of the mesh, similar to the Keystone library
+*/
+
 ArrayList<Draggable> vertices = new ArrayList<Draggable>();
 
 PGraphics render;
