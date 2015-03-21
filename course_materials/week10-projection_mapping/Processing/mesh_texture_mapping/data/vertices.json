@@ -1,0 +1,58 @@
+{
+  "3": {
+    "originalX": 0,
+    "originalY": 300,
+    "y": 300,
+    "x": 0
+  },
+  "2": {
+    "originalX": 800,
+    "originalY": 0,
+    "y": 0,
+    "x": 800
+  },
+  "1": {
+    "originalX": 400,
+    "originalY": 0,
+    "y": 78,
+    "x": 432
+  },
+  "0": {
+    "originalX": 0,
+    "originalY": 0,
+    "y": 172,
+    "x": 206
+  },
+  "7": {
+    "originalX": 400,
+    "originalY": 600,
+    "y": 585,
+    "x": 233
+  },
+  "gridCellCount": 2,
+  "6": {
+    "originalX": 0,
+    "originalY": 600,
+    "y": 600,
+    "x": 0
+  },
+  "5": {
+    "originalX": 800,
+    "originalY": 300,
+    "y": 300,
+    "x": 800
+  },
+  "4": {
+    "originalX": 400,
+    "originalY": 300,
+    "y": 300,
+    "x": 400
+  },
+  "8": {
+    "originalX": 800,
+    "originalY": 600,
+    "y": 343,
+    "x": 416
+  },
+  "vertices.size": 9
+}
